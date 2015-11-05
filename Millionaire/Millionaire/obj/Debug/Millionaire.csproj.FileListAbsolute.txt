@@ -1,0 +1,9 @@
+c:\users\анатолий\documents\visual studio 2013\Projects\Millionaire\Millionaire\bin\Debug\Millionaire.exe.config
+c:\users\анатолий\documents\visual studio 2013\Projects\Millionaire\Millionaire\bin\Debug\Millionaire.exe
+c:\users\анатолий\documents\visual studio 2013\Projects\Millionaire\Millionaire\bin\Debug\Millionaire.pdb
+c:\users\анатолий\documents\visual studio 2013\Projects\Millionaire\Millionaire\obj\Debug\Millionaire.csprojResolveAssemblyReference.cache
+c:\users\анатолий\documents\visual studio 2013\Projects\Millionaire\Millionaire\obj\Debug\Millionaire.Properties.Resources.resources
+c:\users\анатолий\documents\visual studio 2013\Projects\Millionaire\Millionaire\obj\Debug\Millionaire.csproj.GenerateResource.Cache
+c:\users\анатолий\documents\visual studio 2013\Projects\Millionaire\Millionaire\obj\Debug\Millionaire.exe
+c:\users\анатолий\documents\visual studio 2013\Projects\Millionaire\Millionaire\obj\Debug\Millionaire.pdb
+c:\users\анатолий\documents\visual studio 2013\Projects\Millionaire\Millionaire\obj\Debug\Millionaire.MainForm.resources
