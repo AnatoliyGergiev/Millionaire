@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.hint_50 = new System.Windows.Forms.PictureBox();
+            this.hint_tel = new System.Windows.Forms.PictureBox();
+            this.hint_hall = new System.Windows.Forms.PictureBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button_D = new System.Windows.Forms.Button();
             this.button_C = new System.Windows.Forms.Button();
@@ -46,17 +49,14 @@
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox_exit = new System.Windows.Forms.PictureBox();
             this.pictureBox_new = new System.Windows.Forms.PictureBox();
-            this.hint_50 = new System.Windows.Forms.PictureBox();
-            this.hint_tel = new System.Windows.Forms.PictureBox();
-            this.hint_hall = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_new)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_tel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_hall)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_new)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +74,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Подсказки";
             this.groupBox1.Visible = false;
+            // 
+            // hint_50
+            // 
+            this.hint_50.BackgroundImage = global::Millionaire.Properties.Resources._1;
+            this.hint_50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hint_50.Location = new System.Drawing.Point(8, 21);
+            this.hint_50.Name = "hint_50";
+            this.hint_50.Size = new System.Drawing.Size(46, 29);
+            this.hint_50.TabIndex = 3;
+            this.hint_50.TabStop = false;
+            // 
+            // hint_tel
+            // 
+            this.hint_tel.BackgroundImage = global::Millionaire.Properties.Resources._2;
+            this.hint_tel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hint_tel.Location = new System.Drawing.Point(60, 21);
+            this.hint_tel.Name = "hint_tel";
+            this.hint_tel.Size = new System.Drawing.Size(46, 29);
+            this.hint_tel.TabIndex = 3;
+            this.hint_tel.TabStop = false;
+            // 
+            // hint_hall
+            // 
+            this.hint_hall.BackgroundImage = global::Millionaire.Properties.Resources._3;
+            this.hint_hall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hint_hall.Location = new System.Drawing.Point(112, 21);
+            this.hint_hall.Name = "hint_hall";
+            this.hint_hall.Size = new System.Drawing.Size(46, 29);
+            this.hint_hall.TabIndex = 3;
+            this.hint_hall.TabStop = false;
             // 
             // listBox1
             // 
@@ -114,6 +144,7 @@
             this.button_D.TabIndex = 8;
             this.button_D.UseVisualStyleBackColor = false;
             this.button_D.Visible = false;
+            this.button_D.Click += new System.EventHandler(this.button_D_Click);
             // 
             // button_C
             // 
@@ -125,6 +156,7 @@
             this.button_C.TabIndex = 9;
             this.button_C.UseVisualStyleBackColor = false;
             this.button_C.Visible = false;
+            this.button_C.Click += new System.EventHandler(this.button_C_Click);
             // 
             // button_B
             // 
@@ -281,36 +313,6 @@
             this.pictureBox_new.TabStop = false;
             this.pictureBox_new.Click += new System.EventHandler(this.pictureBox_new_Click);
             // 
-            // hint_50
-            // 
-            this.hint_50.BackgroundImage = global::Millionaire.Properties.Resources._1;
-            this.hint_50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.hint_50.Location = new System.Drawing.Point(8, 21);
-            this.hint_50.Name = "hint_50";
-            this.hint_50.Size = new System.Drawing.Size(46, 29);
-            this.hint_50.TabIndex = 3;
-            this.hint_50.TabStop = false;
-            // 
-            // hint_tel
-            // 
-            this.hint_tel.BackgroundImage = global::Millionaire.Properties.Resources._2;
-            this.hint_tel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.hint_tel.Location = new System.Drawing.Point(60, 21);
-            this.hint_tel.Name = "hint_tel";
-            this.hint_tel.Size = new System.Drawing.Size(46, 29);
-            this.hint_tel.TabIndex = 3;
-            this.hint_tel.TabStop = false;
-            // 
-            // hint_hall
-            // 
-            this.hint_hall.BackgroundImage = global::Millionaire.Properties.Resources._3;
-            this.hint_hall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.hint_hall.Location = new System.Drawing.Point(112, 21);
-            this.hint_hall.Name = "hint_hall";
-            this.hint_hall.Size = new System.Drawing.Size(46, 29);
-            this.hint_hall.TabIndex = 3;
-            this.hint_hall.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::Millionaire.Properties.Resources.mil;
@@ -349,13 +351,13 @@
             this.Name = "MainForm";
             this.Text = "Кто хочет стать миллионером";
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.hint_50)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hint_tel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hint_hall)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_new)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hint_50)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hint_tel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hint_hall)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

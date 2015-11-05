@@ -12,38 +12,46 @@ namespace Millionaire
     {
         private readonly List<string> question;
         private readonly List<Answer> answer;
-        public string UserAnswer{ get; set; }
-        private int number_question;
-        
-        private MainForm form;
+        public string User_Answer { get; set; }
+        public string Right_Answer { get; set; }
+        public int Number_Question;
 
-        public Game(MainForm f)
+        public string Question { get { return question[Number_Question]; } }
+        public string Answer_A { get { return answer[Number_Question][0]; } }
+        public string Answer_B { get { return answer[Number_Question][1]; } }
+        public string Answer_C { get { return answer[Number_Question][2]; } }
+        public string Answer_D { get { return answer[Number_Question][3]; } }
+        
+        //private MainForm form;
+
+        public Game()//MainForm f)
         {
-            form = f;
+            //form = f;
             Random rnd = new Random();
-            number_question = rnd.Next(0, 28)*5;
+            Number_Question = rnd.Next(0, 28)*5;
             question = new List<string>();
             answer = new List<Answer>();
             Download();
+            Number_Question = 0;
             OnStart();
         }
 
         private void OnStart()
         {
-            int i = 0;
+            /*int i = 0;
             {
-                form.TextBox_Question = question[i];
-                form.Button_A = answer[i][0];
-                form.Button_B = answer[i][1];
-                form.Button_C = answer[i][2];
-                form.Button_D = answer[i][3];
-            }
+                form.Question = question[i];
+                form.Answer_A = answer[i][0];
+                form.Answer_B = answer[i][1];
+                form.Answer_C = answer[i][2];
+                form.Answer_D = answer[i][3];
+            }*/
         }
         private void Download()
         {
             using (StreamReader sr = new StreamReader("..\\..\\Resources\\question.txt", Encoding.Default))
             {
-                for (int i = 0; i < number_question; i++)
+                for (int i = 0; i < Number_Question; i++)
                     sr.ReadLine();
                 for (int i = 0; i < 15; i++)
                 {
@@ -55,6 +63,10 @@ namespace Millionaire
                     }
                 }
             }
+        }
+        public bool IsAnswerRight()
+        {
+            return User_Answer == Right_Answer;
         }
     }
 }

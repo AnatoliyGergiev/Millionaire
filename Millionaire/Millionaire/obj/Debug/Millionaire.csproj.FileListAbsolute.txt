@@ -7,3 +7,12 @@ c:\users\анатолий\documents\visual studio 2013\Projects\Millionaire\Mill
 c:\users\анатолий\documents\visual studio 2013\Projects\Millionaire\Millionaire\obj\Debug\Millionaire.exe
 c:\users\анатолий\documents\visual studio 2013\Projects\Millionaire\Millionaire\obj\Debug\Millionaire.pdb
 c:\users\анатолий\documents\visual studio 2013\Projects\Millionaire\Millionaire\obj\Debug\Millionaire.MainForm.resources
+C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\bin\Debug\Millionaire.exe.config
+C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\obj\Debug\Millionaire.exe
+C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\obj\Debug\Millionaire.pdb
+C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\obj\Debug\Millionaire.csprojResolveAssemblyReference.cache
+C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\obj\Debug\Millionaire.MainForm.resources
+C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\obj\Debug\Millionaire.Properties.Resources.resources
+C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\obj\Debug\Millionaire.csproj.GenerateResource.Cache
+C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\bin\Debug\Millionaire.exe
+C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\bin\Debug\Millionaire.pdb
