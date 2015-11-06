@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,15 +43,24 @@ namespace Millionaire
 
         public event EventHandler<EventArgs> Next_q;
         public event EventHandler<EventArgs> Select_button;
+        SoundPlayer player;
         public MainForm()
         {
             InitializeComponent();
-            Presenter pr = new Presenter(this);
+            Game game = new Game();
+            player = new SoundPlayer("../../resources/sound/begin.wav");
+            player.Play();
+            BackgroundImage = new Bitmap("../../resources/image/423.jpg");
+            button_stop.Visible = true;
+            pictureBox_exit.Visible = true;
+            pictureBox_new.Visible = true;
         }
 
         private void pictureBox_new_Click(object sender, EventArgs e)
         {
-            button_stop.Visible = true;
+            pictureBox1.Visible = true;
+            Presenter pr = new Presenter(this);
+            player.Stop();
             listBox1.Visible = true;
             button_A.Visible = true;
             button_B.Visible = true;
@@ -58,7 +68,10 @@ namespace Millionaire
             button_D.Visible = true;
             textBox_question.Visible = true;
             groupBox1.Visible = true;
-            Game game = new Game();
+            button1.Visible = true;
+            button2.Visible = true;
+            button3.Visible = true;
+            button4.Visible = true;
         }
 
         private void button_B_Click(object sender, EventArgs e)
@@ -80,6 +93,8 @@ namespace Millionaire
         }
         public void NextQuestion()
         {
+            picture_True.Visible = false;
+            text_True.Visible = false;
             if (Next_q != null)
                 Next_q(this, EventArgs.Empty);
         }
@@ -90,7 +105,8 @@ namespace Millionaire
         }
         public void Win()
         {
-
+            player.SoundLocation = "../../resources/sound/winner.wav";
+            player.Play();
         }
 
         private void button_C_Click(object sender, EventArgs e)
@@ -109,6 +125,22 @@ namespace Millionaire
             {
                 Select_button(this, EventArgs.Empty);
             }
+        }
+        public void TrueAnswer()
+        {
+            player.SoundLocation = "../../resources/sound/true.wav";
+            player.Play();
+            picture_True.Visible = true;
+            text_True.Visible = true;
+            button_Next.Visible = true;
+        }
+
+        private void button_Next_Click(object sender, EventArgs e)
+        {
+            button_Next.Visible = false;
+            player.SoundLocation = "../../resources/sound/gong.wav";
+            player.Play();
+            NextQuestion();
         }
     }
 }

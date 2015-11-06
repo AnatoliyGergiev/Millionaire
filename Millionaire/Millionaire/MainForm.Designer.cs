@@ -29,15 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.hint_50 = new System.Windows.Forms.PictureBox();
-            this.hint_tel = new System.Windows.Forms.PictureBox();
-            this.hint_hall = new System.Windows.Forms.PictureBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button_D = new System.Windows.Forms.Button();
             this.button_C = new System.Windows.Forms.Button();
             this.button_B = new System.Windows.Forms.Button();
             this.button_stop = new System.Windows.Forms.Button();
-            this.textBox_question = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.играToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.администраToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,16 +43,24 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.text_True = new System.Windows.Forms.Label();
+            this.picture_True = new System.Windows.Forms.PictureBox();
             this.pictureBox_exit = new System.Windows.Forms.PictureBox();
             this.pictureBox_new = new System.Windows.Forms.PictureBox();
+            this.hint_50 = new System.Windows.Forms.PictureBox();
+            this.hint_tel = new System.Windows.Forms.PictureBox();
+            this.hint_hall = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button_Next = new System.Windows.Forms.Button();
+            this.textBox_question = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_True)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_new)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_tel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_hall)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_new)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,36 +78,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Подсказки";
             this.groupBox1.Visible = false;
-            // 
-            // hint_50
-            // 
-            this.hint_50.BackgroundImage = global::Millionaire.Properties.Resources._1;
-            this.hint_50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.hint_50.Location = new System.Drawing.Point(8, 21);
-            this.hint_50.Name = "hint_50";
-            this.hint_50.Size = new System.Drawing.Size(46, 29);
-            this.hint_50.TabIndex = 3;
-            this.hint_50.TabStop = false;
-            // 
-            // hint_tel
-            // 
-            this.hint_tel.BackgroundImage = global::Millionaire.Properties.Resources._2;
-            this.hint_tel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.hint_tel.Location = new System.Drawing.Point(60, 21);
-            this.hint_tel.Name = "hint_tel";
-            this.hint_tel.Size = new System.Drawing.Size(46, 29);
-            this.hint_tel.TabIndex = 3;
-            this.hint_tel.TabStop = false;
-            // 
-            // hint_hall
-            // 
-            this.hint_hall.BackgroundImage = global::Millionaire.Properties.Resources._3;
-            this.hint_hall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.hint_hall.Location = new System.Drawing.Point(112, 21);
-            this.hint_hall.Name = "hint_hall";
-            this.hint_hall.Size = new System.Drawing.Size(46, 29);
-            this.hint_hall.TabIndex = 3;
-            this.hint_hall.TabStop = false;
             // 
             // listBox1
             // 
@@ -181,21 +155,6 @@
             this.button_stop.Text = "Стоп";
             this.button_stop.UseVisualStyleBackColor = false;
             this.button_stop.Visible = false;
-            // 
-            // textBox_question
-            // 
-            this.textBox_question.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox_question.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox_question.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_question.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox_question.Location = new System.Drawing.Point(24, 267);
-            this.textBox_question.Multiline = true;
-            this.textBox_question.Name = "textBox_question";
-            this.textBox_question.ReadOnly = true;
-            this.textBox_question.Size = new System.Drawing.Size(513, 84);
-            this.textBox_question.TabIndex = 7;
-            this.textBox_question.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_question.Visible = false;
             // 
             // menuStrip1
             // 
@@ -292,6 +251,29 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Visible = false;
             // 
+            // text_True
+            // 
+            this.text_True.AutoSize = true;
+            this.text_True.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.text_True.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.text_True.ForeColor = System.Drawing.Color.Yellow;
+            this.text_True.Location = new System.Drawing.Point(292, 235);
+            this.text_True.Name = "text_True";
+            this.text_True.Size = new System.Drawing.Size(124, 24);
+            this.text_True.TabIndex = 20;
+            this.text_True.Text = "Правильно!!!";
+            this.text_True.Visible = false;
+            // 
+            // picture_True
+            // 
+            this.picture_True.BackgroundImage = global::Millionaire.Properties.Resources.Безымянный;
+            this.picture_True.Location = new System.Drawing.Point(422, 162);
+            this.picture_True.Name = "picture_True";
+            this.picture_True.Size = new System.Drawing.Size(81, 99);
+            this.picture_True.TabIndex = 19;
+            this.picture_True.TabStop = false;
+            this.picture_True.Visible = false;
+            // 
             // pictureBox_exit
             // 
             this.pictureBox_exit.BackgroundImage = global::Millionaire.Properties.Resources.Exit;
@@ -301,6 +283,7 @@
             this.pictureBox_exit.Size = new System.Drawing.Size(46, 29);
             this.pictureBox_exit.TabIndex = 14;
             this.pictureBox_exit.TabStop = false;
+            this.pictureBox_exit.Visible = false;
             // 
             // pictureBox_new
             // 
@@ -311,7 +294,38 @@
             this.pictureBox_new.Size = new System.Drawing.Size(46, 29);
             this.pictureBox_new.TabIndex = 15;
             this.pictureBox_new.TabStop = false;
+            this.pictureBox_new.Visible = false;
             this.pictureBox_new.Click += new System.EventHandler(this.pictureBox_new_Click);
+            // 
+            // hint_50
+            // 
+            this.hint_50.BackgroundImage = global::Millionaire.Properties.Resources._1;
+            this.hint_50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hint_50.Location = new System.Drawing.Point(8, 21);
+            this.hint_50.Name = "hint_50";
+            this.hint_50.Size = new System.Drawing.Size(46, 29);
+            this.hint_50.TabIndex = 3;
+            this.hint_50.TabStop = false;
+            // 
+            // hint_tel
+            // 
+            this.hint_tel.BackgroundImage = global::Millionaire.Properties.Resources._2;
+            this.hint_tel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hint_tel.Location = new System.Drawing.Point(60, 21);
+            this.hint_tel.Name = "hint_tel";
+            this.hint_tel.Size = new System.Drawing.Size(46, 29);
+            this.hint_tel.TabIndex = 3;
+            this.hint_tel.TabStop = false;
+            // 
+            // hint_hall
+            // 
+            this.hint_hall.BackgroundImage = global::Millionaire.Properties.Resources._3;
+            this.hint_hall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hint_hall.Location = new System.Drawing.Point(112, 21);
+            this.hint_hall.Name = "hint_hall";
+            this.hint_hall.Size = new System.Drawing.Size(46, 29);
+            this.hint_hall.TabIndex = 3;
+            this.hint_hall.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -322,6 +336,32 @@
             this.pictureBox1.Size = new System.Drawing.Size(692, 519);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
+            // button_Next
+            // 
+            this.button_Next.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button_Next.ForeColor = System.Drawing.Color.Yellow;
+            this.button_Next.Location = new System.Drawing.Point(461, 482);
+            this.button_Next.Name = "button_Next";
+            this.button_Next.Size = new System.Drawing.Size(75, 28);
+            this.button_Next.TabIndex = 21;
+            this.button_Next.Text = "Далее";
+            this.button_Next.UseVisualStyleBackColor = false;
+            this.button_Next.Visible = false;
+            this.button_Next.Click += new System.EventHandler(this.button_Next_Click);
+            // 
+            // textBox_question
+            // 
+            this.textBox_question.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox_question.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_question.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox_question.Location = new System.Drawing.Point(24, 266);
+            this.textBox_question.Name = "textBox_question";
+            this.textBox_question.Size = new System.Drawing.Size(512, 84);
+            this.textBox_question.TabIndex = 10;
+            this.textBox_question.UseVisualStyleBackColor = false;
+            this.textBox_question.Visible = false;
             // 
             // MainForm
             // 
@@ -329,6 +369,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(707, 512);
+            this.Controls.Add(this.button_Next);
+            this.Controls.Add(this.text_True);
+            this.Controls.Add(this.picture_True);
             this.Controls.Add(this.button_A);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pictureBox_exit);
@@ -337,13 +380,13 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button_D);
             this.Controls.Add(this.button_C);
+            this.Controls.Add(this.textBox_question);
             this.Controls.Add(this.button_B);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button_stop);
-            this.Controls.Add(this.textBox_question);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -351,13 +394,14 @@
             this.Name = "MainForm";
             this.Text = "Кто хочет стать миллионером";
             this.groupBox1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_True)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_new)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_50)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_tel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_hall)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_new)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -378,7 +422,6 @@
         private System.Windows.Forms.Button button_C;
         private System.Windows.Forms.Button button_B;
         private System.Windows.Forms.Button button_stop;
-        private System.Windows.Forms.TextBox textBox_question;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem играToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem администраToolStripMenuItem;
@@ -388,6 +431,10 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.PictureBox picture_True;
+        private System.Windows.Forms.Label text_True;
+        private System.Windows.Forms.Button button_Next;
+        private System.Windows.Forms.Button textBox_question;
 
     }
 }

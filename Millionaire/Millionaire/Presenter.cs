@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,9 +26,16 @@ namespace Millionaire
             _game.User_Answer = _gameview.User_Answer;
             _game.Right_Answer = _gameview.Right_Answer;
             if (_game.IsAnswerRight())
-                _gameview.NextQuestion();
+            {
+                _gameview.TrueAnswer();
+                //_gameview.NextQuestion();
+            }
             else
+            {
+                SoundPlayer player = new SoundPlayer("../../resources/sound/false.wav");
+                player.Play();
                 _gameview.GameOver();
+            }
 
             // В данной форме этот вызов не нужен, однако в общем
             // случае изменение части Модели может привести к изменениям
@@ -40,7 +48,7 @@ namespace Millionaire
         private void Next_Question(object sender, EventArgs e)
         {
             if (_gameview.Number_Question == 14)
-                _gameview.GameOver();
+                _gameview.Win();
             else
             {
                 _gameview.Number_Question++;

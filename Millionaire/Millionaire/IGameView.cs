@@ -19,6 +19,8 @@ namespace Millionaire
         int Number_Question { get; set; }
         void GameOver();
         void NextQuestion();
+        void TrueAnswer();
+        void Win();
 
 
         event EventHandler<EventArgs> Select_button;
