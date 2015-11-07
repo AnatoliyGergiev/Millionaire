@@ -17,6 +17,7 @@ namespace Millionaire
         string User_Answer { get; set; }
         string Right_Answer { get; set; }
         int Number_Question { get; set; }
+        int Current_Question { get; set; }
         void GameOver(object sender);
         void NextQuestion();
         void TrueAnswer(object sender);

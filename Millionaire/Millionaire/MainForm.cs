@@ -38,6 +38,7 @@ namespace Millionaire
             set { textBox_question.Text = (Number_Question+1) + ". " + value; }
         }
         public int Number_Question { get; set; }
+        public int Current_Question { get; set; }
         public string User_Answer { get; set; }
         public string Right_Answer { get; set; }
 
@@ -145,6 +146,16 @@ namespace Millionaire
         }
         public void GameOver(object sender)
         {
+            Button x = new Button();
+            if (button_A.Text == Right_Answer)
+                x = button_A;
+            else if (button_B.Text == Right_Answer)
+                x = button_B;
+            else if (button_C.Text == Right_Answer)
+                x = button_C;
+            else if (button_D.Text == Right_Answer)
+                x = button_D;
+            x.BackColor = Color.Green;
             Button a = sender as Button;
             a.BackColor = Color.Red;
             MessageBox.Show("Game Over!!!");

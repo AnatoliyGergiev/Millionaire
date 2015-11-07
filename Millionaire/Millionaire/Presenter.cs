@@ -54,6 +54,9 @@ namespace Millionaire
             {
                 _gameview.Number_Question++;
                 _game.Number_Question = _gameview.Number_Question;
+                _gameview.Current_Question = rnd.Next(0,_game.Count_Question-1);
+                _game.Current_Question = _gameview.Current_Question;
+                _game.Remove_Question(_game.Current_Question);
                 UpdateView();
             }
         }
@@ -61,11 +64,23 @@ namespace Millionaire
         private void UpdateView()
         {
             _gameview.Question = _game.Question;
-            _gameview.Answer_A = _game.Answer_A;
-            _gameview.Answer_B = _game.Answer_B;
-            _gameview.Answer_C = _game.Answer_C;
-            _gameview.Answer_D = _game.Answer_D;
-            _gameview.Right_Answer = _game.Answer_A;
+            Random rnd = new Random();
+            List<string> ans = new List<string>();
+            ans.Add(_game.Answer_A);
+            ans.Add(_game.Answer_B);
+            ans.Add(_game.Answer_C);
+            ans.Add(_game.Answer_D );
+            int i=rnd.Next(0, 3);
+            _gameview.Answer_A = ans[i];
+            ans.RemoveAt(i);
+            i = rnd.Next(0, 2);
+            _gameview.Answer_B = ans[i];
+            ans.RemoveAt(i);
+            i = rnd.Next(0, 1);
+            _gameview.Answer_C = ans[i];
+            ans.RemoveAt(i);
+            _gameview.Answer_D = ans[0];
+            _gameview.Right_Answer = _game.Right_Answer;
         }
     }
 }

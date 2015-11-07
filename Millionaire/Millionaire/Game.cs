@@ -12,15 +12,22 @@ namespace Millionaire
     {
         private readonly List<string> question;
         private readonly List<Answer> answer;
+        public int Count_Question { get; set; }
         public string User_Answer { get; set; }
         public string Right_Answer { get; set; }
-        public int Number_Question = 0;
-
-        public string Question { get { return question[Number_Question]; } }
-        public string Answer_A { get { return answer[Number_Question][0]; } }
-        public string Answer_B { get { return answer[Number_Question][1]; } }
-        public string Answer_C { get { return answer[Number_Question][2]; } }
-        public string Answer_D { get { return answer[Number_Question][3]; } }
+        public int Number_Question {get; set;}
+        public int Current_Question { get; set; }
+        public void Remove_Question(int index)
+        {
+            question.RemoveAt(index);
+            answer.RemoveAt(index);
+            Count_Question--;
+        }
+        public string Question { get { return question[Current_Question]; } }
+        public string Answer_A { get { Right_Answer = answer[Current_Question][0]; return answer[Current_Question][0]; } }
+        public string Answer_B { get { return answer[Current_Question][1]; } }
+        public string Answer_C { get { return answer[Current_Question][2]; } }
+        public string Answer_D { get { return answer[Current_Question][3]; } }
         
         //private MainForm form;
 
@@ -37,6 +44,7 @@ namespace Millionaire
             //} while (n <= 14);
             Download(0);
             Number_Question = 0;
+            Current_Question = rnd.Next(0, Count_Question-1);
             //OnStart();
         }
 
@@ -79,6 +87,7 @@ namespace Millionaire
                 } while (question[i] != null);
                 question.RemoveAt(i);
                 answer.RemoveAt(i);
+                Count_Question = i;
             }
         }
         public bool IsAnswerRight()
