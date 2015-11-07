@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mil.JPG" />
+    <None Include="Resources\Image\zvonok.JPG" />
     <None Include="Resources\Image\Безымянный.JPG" />
     <None Include="Resources\Image\Exit.bmp" />
     <None Include="Resources\Image\new.bmp" />

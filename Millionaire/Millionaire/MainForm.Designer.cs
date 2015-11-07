@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.hint_50 = new System.Windows.Forms.PictureBox();
+            this.hint_tel = new System.Windows.Forms.PictureBox();
+            this.hint_hall = new System.Windows.Forms.PictureBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button_D = new System.Windows.Forms.Button();
             this.button_C = new System.Windows.Forms.Button();
@@ -44,24 +47,38 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.text_True = new System.Windows.Forms.Label();
+            this.button_Next = new System.Windows.Forms.Button();
+            this.textBox_question = new System.Windows.Forms.Button();
+            this.text_tel_hint = new System.Windows.Forms.Label();
+            this.picture_tel_hint = new System.Windows.Forms.PictureBox();
             this.picture_True = new System.Windows.Forms.PictureBox();
             this.pictureBox_exit = new System.Windows.Forms.PictureBox();
             this.pictureBox_new = new System.Windows.Forms.PictureBox();
-            this.hint_50 = new System.Windows.Forms.PictureBox();
-            this.hint_tel = new System.Windows.Forms.PictureBox();
-            this.hint_hall = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button_Next = new System.Windows.Forms.Button();
-            this.textBox_question = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.groupBox_hall = new System.Windows.Forms.GroupBox();
+            this.label_A = new System.Windows.Forms.Label();
+            this.label_B = new System.Windows.Forms.Label();
+            this.label_C = new System.Windows.Forms.Label();
+            this.label_D = new System.Windows.Forms.Label();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.progressBar3 = new System.Windows.Forms.ProgressBar();
+            this.progressBar4 = new System.Windows.Forms.ProgressBar();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture_True)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_new)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_tel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_hall)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_tel_hint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_True)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_new)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox_hall.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -78,6 +95,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Подсказки";
             this.groupBox1.Visible = false;
+            // 
+            // hint_50
+            // 
+            this.hint_50.BackgroundImage = global::Millionaire.Properties.Resources._1;
+            this.hint_50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hint_50.Location = new System.Drawing.Point(8, 21);
+            this.hint_50.Name = "hint_50";
+            this.hint_50.Size = new System.Drawing.Size(46, 29);
+            this.hint_50.TabIndex = 3;
+            this.hint_50.TabStop = false;
+            this.hint_50.Click += new System.EventHandler(this.hint_50_Click);
+            // 
+            // hint_tel
+            // 
+            this.hint_tel.BackgroundImage = global::Millionaire.Properties.Resources._2;
+            this.hint_tel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hint_tel.Location = new System.Drawing.Point(60, 21);
+            this.hint_tel.Name = "hint_tel";
+            this.hint_tel.Size = new System.Drawing.Size(46, 29);
+            this.hint_tel.TabIndex = 3;
+            this.hint_tel.TabStop = false;
+            this.hint_tel.Click += new System.EventHandler(this.hint_tel_Click);
+            // 
+            // hint_hall
+            // 
+            this.hint_hall.BackgroundImage = global::Millionaire.Properties.Resources._3;
+            this.hint_hall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hint_hall.Location = new System.Drawing.Point(112, 21);
+            this.hint_hall.Name = "hint_hall";
+            this.hint_hall.Size = new System.Drawing.Size(46, 29);
+            this.hint_hall.TabIndex = 3;
+            this.hint_hall.TabStop = false;
+            this.hint_hall.Click += new System.EventHandler(this.hint_hall_Click);
             // 
             // listBox1
             // 
@@ -264,80 +314,6 @@
             this.text_True.Text = "Правильно!!!";
             this.text_True.Visible = false;
             // 
-            // picture_True
-            // 
-            this.picture_True.BackgroundImage = global::Millionaire.Properties.Resources.Безымянный;
-            this.picture_True.Location = new System.Drawing.Point(422, 162);
-            this.picture_True.Name = "picture_True";
-            this.picture_True.Size = new System.Drawing.Size(81, 99);
-            this.picture_True.TabIndex = 19;
-            this.picture_True.TabStop = false;
-            this.picture_True.Visible = false;
-            // 
-            // pictureBox_exit
-            // 
-            this.pictureBox_exit.BackgroundImage = global::Millionaire.Properties.Resources.Exit;
-            this.pictureBox_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_exit.Location = new System.Drawing.Point(52, 24);
-            this.pictureBox_exit.Name = "pictureBox_exit";
-            this.pictureBox_exit.Size = new System.Drawing.Size(46, 29);
-            this.pictureBox_exit.TabIndex = 14;
-            this.pictureBox_exit.TabStop = false;
-            this.pictureBox_exit.Visible = false;
-            // 
-            // pictureBox_new
-            // 
-            this.pictureBox_new.BackgroundImage = global::Millionaire.Properties.Resources._new;
-            this.pictureBox_new.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_new.Location = new System.Drawing.Point(0, 24);
-            this.pictureBox_new.Name = "pictureBox_new";
-            this.pictureBox_new.Size = new System.Drawing.Size(46, 29);
-            this.pictureBox_new.TabIndex = 15;
-            this.pictureBox_new.TabStop = false;
-            this.pictureBox_new.Visible = false;
-            this.pictureBox_new.Click += new System.EventHandler(this.pictureBox_new_Click);
-            // 
-            // hint_50
-            // 
-            this.hint_50.BackgroundImage = global::Millionaire.Properties.Resources._1;
-            this.hint_50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.hint_50.Location = new System.Drawing.Point(8, 21);
-            this.hint_50.Name = "hint_50";
-            this.hint_50.Size = new System.Drawing.Size(46, 29);
-            this.hint_50.TabIndex = 3;
-            this.hint_50.TabStop = false;
-            // 
-            // hint_tel
-            // 
-            this.hint_tel.BackgroundImage = global::Millionaire.Properties.Resources._2;
-            this.hint_tel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.hint_tel.Location = new System.Drawing.Point(60, 21);
-            this.hint_tel.Name = "hint_tel";
-            this.hint_tel.Size = new System.Drawing.Size(46, 29);
-            this.hint_tel.TabIndex = 3;
-            this.hint_tel.TabStop = false;
-            // 
-            // hint_hall
-            // 
-            this.hint_hall.BackgroundImage = global::Millionaire.Properties.Resources._3;
-            this.hint_hall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.hint_hall.Location = new System.Drawing.Point(112, 21);
-            this.hint_hall.Name = "hint_hall";
-            this.hint_hall.Size = new System.Drawing.Size(46, 29);
-            this.hint_hall.TabIndex = 3;
-            this.hint_hall.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Millionaire.Properties.Resources.mil;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(-44, -7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(692, 519);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
-            // 
             // button_Next
             // 
             this.button_Next.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -363,14 +339,215 @@
             this.textBox_question.UseVisualStyleBackColor = false;
             this.textBox_question.Visible = false;
             // 
+            // text_tel_hint
+            // 
+            this.text_tel_hint.AutoSize = true;
+            this.text_tel_hint.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.text_tel_hint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.text_tel_hint.ForeColor = System.Drawing.Color.Yellow;
+            this.text_tel_hint.Location = new System.Drawing.Point(143, 109);
+            this.text_tel_hint.Name = "text_tel_hint";
+            this.text_tel_hint.Size = new System.Drawing.Size(124, 24);
+            this.text_tel_hint.TabIndex = 20;
+            this.text_tel_hint.Text = "Правильно!!!";
+            this.text_tel_hint.Visible = false;
+            // 
+            // picture_tel_hint
+            // 
+            this.picture_tel_hint.BackgroundImage = global::Millionaire.Properties.Resources.zvonok;
+            this.picture_tel_hint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picture_tel_hint.Location = new System.Drawing.Point(24, 109);
+            this.picture_tel_hint.Name = "picture_tel_hint";
+            this.picture_tel_hint.Size = new System.Drawing.Size(108, 99);
+            this.picture_tel_hint.TabIndex = 19;
+            this.picture_tel_hint.TabStop = false;
+            this.picture_tel_hint.Visible = false;
+            // 
+            // picture_True
+            // 
+            this.picture_True.BackgroundImage = global::Millionaire.Properties.Resources.Безымянный;
+            this.picture_True.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picture_True.Location = new System.Drawing.Point(422, 162);
+            this.picture_True.Name = "picture_True";
+            this.picture_True.Size = new System.Drawing.Size(81, 99);
+            this.picture_True.TabIndex = 19;
+            this.picture_True.TabStop = false;
+            this.picture_True.Visible = false;
+            // 
+            // pictureBox_exit
+            // 
+            this.pictureBox_exit.BackgroundImage = global::Millionaire.Properties.Resources.Exit;
+            this.pictureBox_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_exit.Location = new System.Drawing.Point(52, 24);
+            this.pictureBox_exit.Name = "pictureBox_exit";
+            this.pictureBox_exit.Size = new System.Drawing.Size(46, 29);
+            this.pictureBox_exit.TabIndex = 14;
+            this.pictureBox_exit.TabStop = false;
+            this.pictureBox_exit.Visible = false;
+            this.pictureBox_exit.Click += new System.EventHandler(this.pictureBox_exit_Click);
+            // 
+            // pictureBox_new
+            // 
+            this.pictureBox_new.BackgroundImage = global::Millionaire.Properties.Resources._new;
+            this.pictureBox_new.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_new.Location = new System.Drawing.Point(0, 24);
+            this.pictureBox_new.Name = "pictureBox_new";
+            this.pictureBox_new.Size = new System.Drawing.Size(46, 29);
+            this.pictureBox_new.TabIndex = 15;
+            this.pictureBox_new.TabStop = false;
+            this.pictureBox_new.Visible = false;
+            this.pictureBox_new.Click += new System.EventHandler(this.pictureBox_new_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Millionaire.Properties.Resources.mil;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(-44, -7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(692, 519);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(56, 23);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(89, 17);
+            this.progressBar1.TabIndex = 22;
+            this.progressBar1.Value = 34;
+            // 
+            // groupBox_hall
+            // 
+            this.groupBox_hall.BackColor = System.Drawing.Color.RoyalBlue;
+            this.groupBox_hall.Controls.Add(this.label_D);
+            this.groupBox_hall.Controls.Add(this.label_C);
+            this.groupBox_hall.Controls.Add(this.progressBar4);
+            this.groupBox_hall.Controls.Add(this.progressBar3);
+            this.groupBox_hall.Controls.Add(this.progressBar2);
+            this.groupBox_hall.Controls.Add(this.progressBar1);
+            this.groupBox_hall.Controls.Add(this.label_B);
+            this.groupBox_hall.Controls.Add(this.label5);
+            this.groupBox_hall.Controls.Add(this.label4);
+            this.groupBox_hall.Controls.Add(this.label3);
+            this.groupBox_hall.Controls.Add(this.label2);
+            this.groupBox_hall.Controls.Add(this.label_A);
+            this.groupBox_hall.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox_hall.Location = new System.Drawing.Point(386, 34);
+            this.groupBox_hall.Name = "groupBox_hall";
+            this.groupBox_hall.Size = new System.Drawing.Size(151, 138);
+            this.groupBox_hall.TabIndex = 23;
+            this.groupBox_hall.TabStop = false;
+            this.groupBox_hall.Text = "Помощь зала";
+            this.groupBox_hall.Visible = false;
+            // 
+            // label_A
+            // 
+            this.label_A.AutoSize = true;
+            this.label_A.Location = new System.Drawing.Point(6, 23);
+            this.label_A.Name = "label_A";
+            this.label_A.Size = new System.Drawing.Size(17, 17);
+            this.label_A.TabIndex = 24;
+            this.label_A.Text = "А";
+            // 
+            // label_B
+            // 
+            this.label_B.AutoSize = true;
+            this.label_B.Location = new System.Drawing.Point(6, 51);
+            this.label_B.Name = "label_B";
+            this.label_B.Size = new System.Drawing.Size(17, 17);
+            this.label_B.TabIndex = 24;
+            this.label_B.Text = "B";
+            // 
+            // label_C
+            // 
+            this.label_C.AutoSize = true;
+            this.label_C.Location = new System.Drawing.Point(6, 82);
+            this.label_C.Name = "label_C";
+            this.label_C.Size = new System.Drawing.Size(17, 17);
+            this.label_C.TabIndex = 24;
+            this.label_C.Text = "C";
+            // 
+            // label_D
+            // 
+            this.label_D.AutoSize = true;
+            this.label_D.Location = new System.Drawing.Point(6, 111);
+            this.label_D.Name = "label_D";
+            this.label_D.Size = new System.Drawing.Size(18, 17);
+            this.label_D.TabIndex = 24;
+            this.label_D.Text = "D";
+            // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(56, 51);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(89, 17);
+            this.progressBar2.TabIndex = 22;
+            this.progressBar2.Value = 34;
+            // 
+            // progressBar3
+            // 
+            this.progressBar3.Location = new System.Drawing.Point(56, 82);
+            this.progressBar3.Name = "progressBar3";
+            this.progressBar3.Size = new System.Drawing.Size(89, 17);
+            this.progressBar3.TabIndex = 22;
+            this.progressBar3.Value = 34;
+            // 
+            // progressBar4
+            // 
+            this.progressBar4.Location = new System.Drawing.Point(56, 111);
+            this.progressBar4.Name = "progressBar4";
+            this.progressBar4.Size = new System.Drawing.Size(89, 17);
+            this.progressBar4.TabIndex = 22;
+            this.progressBar4.Value = 34;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 17);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "А";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(23, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 17);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "А";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 82);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(17, 17);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "А";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 111);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 17);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "А";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(707, 512);
+            this.Controls.Add(this.groupBox_hall);
             this.Controls.Add(this.button_Next);
+            this.Controls.Add(this.text_tel_hint);
             this.Controls.Add(this.text_True);
+            this.Controls.Add(this.picture_tel_hint);
             this.Controls.Add(this.picture_True);
             this.Controls.Add(this.button_A);
             this.Controls.Add(this.menuStrip1);
@@ -394,15 +571,18 @@
             this.Name = "MainForm";
             this.Text = "Кто хочет стать миллионером";
             this.groupBox1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture_True)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_new)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_50)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_tel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_hall)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_tel_hint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_True)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_exit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_new)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox_hall.ResumeLayout(false);
+            this.groupBox_hall.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,6 +615,21 @@
         private System.Windows.Forms.Label text_True;
         private System.Windows.Forms.Button button_Next;
         private System.Windows.Forms.Button textBox_question;
+        private System.Windows.Forms.PictureBox picture_tel_hint;
+        private System.Windows.Forms.Label text_tel_hint;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.GroupBox groupBox_hall;
+        private System.Windows.Forms.Label label_D;
+        private System.Windows.Forms.Label label_C;
+        private System.Windows.Forms.ProgressBar progressBar4;
+        private System.Windows.Forms.ProgressBar progressBar3;
+        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.Label label_B;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_A;
 
     }
 }

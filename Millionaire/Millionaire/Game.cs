@@ -14,7 +14,7 @@ namespace Millionaire
         private readonly List<Answer> answer;
         public string User_Answer { get; set; }
         public string Right_Answer { get; set; }
-        public int Number_Question;
+        public int Number_Question = 0;
 
         public string Question { get { return question[Number_Question]; } }
         public string Answer_A { get { return answer[Number_Question][0]; } }
@@ -28,40 +28,57 @@ namespace Millionaire
         {
             //form = f;
             Random rnd = new Random();
-            Number_Question = rnd.Next(0, 28)*5;
             question = new List<string>();
             answer = new List<Answer>();
-            Download();
+            //int n;
+            //do
+            //{
+            //    n = rnd.Next(0, 28) * 5;
+            //} while (n <= 14);
+            Download(0);
             Number_Question = 0;
-            OnStart();
+            //OnStart();
         }
 
-        private void OnStart()
+        /*private void OnStart()
         {
-            /*int i = 0;
+            int i = 0;
             {
                 form.Question = question[i];
                 form.Answer_A = answer[i][0];
                 form.Answer_B = answer[i][1];
                 form.Answer_C = answer[i][2];
                 form.Answer_D = answer[i][3];
-            }*/
-        }
-        private void Download()
+            }
+        }*/
+        private void Download(int n)
         {
             using (StreamReader sr = new StreamReader("..\\..\\Resources\\question.txt", Encoding.Default))
             {
-                for (int i = 0; i < Number_Question; i++)
-                    sr.ReadLine();
-                for (int i = 0; i < 15; i++)
+                //for (int i = 0; i < n; i++)
+                //    sr.ReadLine();
+                //for (int i = 0; i < 15; i++)
+                //{
+                //    question.Add(sr.ReadLine());
+                //    for (int j = 0; j < 4; j++)
+                //    {
+                //        answer.Add(new Answer());
+                //        answer[i][j] = sr.ReadLine();
+                //    }
+                //}
+                int i=-1;
+                do
                 {
+                    i++;
                     question.Add(sr.ReadLine());
+                    answer.Add(new Answer());
                     for (int j = 0; j < 4; j++)
                     {
-                        answer.Add(new Answer());
                         answer[i][j] = sr.ReadLine();
                     }
-                }
+                } while (question[i] != null);
+                question.RemoveAt(i);
+                answer.RemoveAt(i);
             }
         }
         public bool IsAnswerRight()

@@ -27,14 +27,14 @@ namespace Millionaire
             _game.Right_Answer = _gameview.Right_Answer;
             if (_game.IsAnswerRight())
             {
-                _gameview.TrueAnswer();
+                _gameview.TrueAnswer(sender);
                 //_gameview.NextQuestion();
             }
             else
             {
                 SoundPlayer player = new SoundPlayer("../../resources/sound/false.wav");
                 player.Play();
-                _gameview.GameOver();
+                _gameview.GameOver(sender);
             }
 
             // В данной форме этот вызов не нужен, однако в общем
@@ -47,6 +47,7 @@ namespace Millionaire
 
         private void Next_Question(object sender, EventArgs e)
         {
+            Random rnd = new Random();
             if (_gameview.Number_Question == 14)
                 _gameview.Win();
             else
