@@ -40,6 +40,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.играToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.администраToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьВопросToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьВопросToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изменитьВопросToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button_A = new System.Windows.Forms.Button();
@@ -200,7 +203,7 @@
             this.button_stop.ForeColor = System.Drawing.Color.Yellow;
             this.button_stop.Location = new System.Drawing.Point(122, 30);
             this.button_stop.Name = "button_stop";
-            this.button_stop.Size = new System.Drawing.Size(70, 24);
+            this.button_stop.Size = new System.Drawing.Size(74, 28);
             this.button_stop.TabIndex = 12;
             this.button_stop.Text = "Стоп";
             this.button_stop.UseVisualStyleBackColor = false;
@@ -227,9 +230,34 @@
             // 
             // администраToolStripMenuItem
             // 
+            this.администраToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьВопросToolStripMenuItem,
+            this.удалитьВопросToolStripMenuItem,
+            this.изменитьВопросToolStripMenuItem});
             this.администраToolStripMenuItem.Name = "администраToolStripMenuItem";
-            this.администраToolStripMenuItem.Size = new System.Drawing.Size(215, 24);
-            this.администраToolStripMenuItem.Text = "Администраторский режим";
+            this.администраToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
+            this.администраToolStripMenuItem.Text = "Режим администратора";
+            // 
+            // добавитьВопросToolStripMenuItem
+            // 
+            this.добавитьВопросToolStripMenuItem.Name = "добавитьВопросToolStripMenuItem";
+            this.добавитьВопросToolStripMenuItem.Size = new System.Drawing.Size(202, 24);
+            this.добавитьВопросToolStripMenuItem.Text = "Добавить вопрос";
+            this.добавитьВопросToolStripMenuItem.Click += new System.EventHandler(this.добавитьВопросToolStripMenuItem_Click);
+            // 
+            // удалитьВопросToolStripMenuItem
+            // 
+            this.удалитьВопросToolStripMenuItem.Name = "удалитьВопросToolStripMenuItem";
+            this.удалитьВопросToolStripMenuItem.Size = new System.Drawing.Size(202, 24);
+            this.удалитьВопросToolStripMenuItem.Text = "Удалить вопрос";
+            this.удалитьВопросToolStripMenuItem.Click += new System.EventHandler(this.удалитьВопросToolStripMenuItem_Click);
+            // 
+            // изменитьВопросToolStripMenuItem
+            // 
+            this.изменитьВопросToolStripMenuItem.Name = "изменитьВопросToolStripMenuItem";
+            this.изменитьВопросToolStripMenuItem.Size = new System.Drawing.Size(202, 24);
+            this.изменитьВопросToolStripMenuItem.Text = "Изменить вопрос";
+            this.изменитьВопросToolStripMenuItem.Click += new System.EventHandler(this.изменитьВопросToolStripMenuItem_Click);
             // 
             // оПрограммеToolStripMenuItem
             // 
@@ -630,6 +658,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_A;
+        private System.Windows.Forms.ToolStripMenuItem добавитьВопросToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem удалитьВопросToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem изменитьВопросToolStripMenuItem;
 
     }
 }

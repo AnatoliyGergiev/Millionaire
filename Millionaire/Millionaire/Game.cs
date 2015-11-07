@@ -23,13 +23,53 @@ namespace Millionaire
             answer.RemoveAt(index);
             Count_Question--;
         }
-        public string Question { get { return question[Current_Question]; } }
-        public string Answer_A { get { Right_Answer = answer[Current_Question][0]; return answer[Current_Question][0]; } }
-        public string Answer_B { get { return answer[Current_Question][1]; } }
-        public string Answer_C { get { return answer[Current_Question][2]; } }
-        public string Answer_D { get { return answer[Current_Question][3]; } }
+        public string Question 
+        { 
+            get { return question[Current_Question]; }
+            set { question.Add(value); }
+        }
+        public string Answer_A 
+        { 
+            get { Right_Answer = answer[Current_Question][0]; return answer[Current_Question][0]; }
+            set { answer.Add(new Answer()); answer[Count_Question++][0] = value; }
+        }
+        public string Answer_B 
+        { 
+            get { return answer[Current_Question][1]; }
+            set { answer[Count_Question-1][1] = value; }
+        }
+        public string Answer_C 
+        { 
+            get { return answer[Current_Question][2]; }
+            set { answer[Count_Question-1][2] = value; }
+        }
+        public string Answer_D 
+        { 
+            get { return answer[Current_Question][3]; }
+            set { answer[Count_Question-1][3] = value; }
+        }
         
-        //private MainForm form;
+        public void SaveQuestion()
+        {
+            using (StreamWriter sw = new StreamWriter("..\\..\\Resources\\question.txt", true))
+            {
+                sw.WriteLine(question[Count_Question-1]);
+                for (int i = 0; i < 4; i++)
+                    sw.WriteLine(answer[Count_Question-1][i]);
+            }
+        }
+        public void SaveQuestions()
+        {
+            using (StreamWriter sw = new StreamWriter("..\\..\\Resources\\question.txt", false))
+            {
+                for (int n = 0; n < Count_Question; n++)
+                {
+                    sw.WriteLine(question[n]);
+                    for (int i = 0; i < 4; i++)
+                        sw.WriteLine(answer[n][i]);
+                }
+            }
+        }
 
         public Game()//MainForm f)
         {

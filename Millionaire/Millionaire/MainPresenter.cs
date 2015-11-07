@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Millionaire
 {
-    class Presenter
+    class MainPresenter
     {
         private readonly Game _game = new Game();
         private readonly IGameView _gameview;
-        public Presenter(IGameView gameview)
+        public MainPresenter(IGameView gameview)
         {
             _gameview = gameview;
             // Презентер подписывается на уведомления о событиях Представления

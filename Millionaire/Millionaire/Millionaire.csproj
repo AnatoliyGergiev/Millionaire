@@ -44,7 +44,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPresenter.cs" />
+    <Compile Include="AddQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddQuestionForm.Designer.cs">
+      <DependentUpon>AddQuestionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteQuestionForm.Designer.cs">
+      <DependentUpon>DeleteQuestionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditPresenter.cs" />
+    <Compile Include="EditQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditQuestionForm.Designer.cs">
+      <DependentUpon>EditQuestionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Game.cs" />
+    <Compile Include="IAddView.cs" />
+    <Compile Include="IEditView.cs" />
     <Compile Include="IGameView.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -52,10 +74,19 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presenter.cs" />
+    <Compile Include="MainPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Answer.cs" />
+    <EmbeddedResource Include="AddQuestionForm.resx">
+      <DependentUpon>AddQuestionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteQuestionForm.resx">
+      <DependentUpon>DeleteQuestionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditQuestionForm.resx">
+      <DependentUpon>EditQuestionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

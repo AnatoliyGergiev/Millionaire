@@ -16,3 +16,6 @@ C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\o
 C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\obj\Debug\Millionaire.csproj.GenerateResource.Cache
 C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\bin\Debug\Millionaire.exe
 C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\bin\Debug\Millionaire.pdb
+C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\obj\Debug\Millionaire.AddQuestionForm.resources
+C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\obj\Debug\Millionaire.DeleteQuestionForm.resources
+C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\obj\Debug\Millionaire.EditQuestionForm.resources
