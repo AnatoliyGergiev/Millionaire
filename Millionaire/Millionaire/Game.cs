@@ -26,32 +26,45 @@ namespace Millionaire
         public string Question 
         { 
             get { return question[Current_Question]; }
-            set { question.Add(value); }
+            set { 
+                if (Current_Question == Count_Question) 
+                    question.Add(value);
+                else 
+                    question[Current_Question] = value; }
         }
         public string Answer_A 
         { 
             get { Right_Answer = answer[Current_Question][0]; return answer[Current_Question][0]; }
-            set { answer.Add(new Answer()); answer[Count_Question++][0] = value; }
+            set
+            {
+                if (Current_Question == Count_Question++) 
+                { 
+                    answer.Add(new Answer()); 
+                    answer[Current_Question][0] = value; 
+                }
+                else 
+                    answer[Current_Question][0] = value;
+            }
         }
         public string Answer_B 
         { 
             get { return answer[Current_Question][1]; }
-            set { answer[Count_Question-1][1] = value; }
+            set { answer[Current_Question][1] = value; }
         }
         public string Answer_C 
         { 
             get { return answer[Current_Question][2]; }
-            set { answer[Count_Question-1][2] = value; }
+            set { answer[Current_Question][2] = value; }
         }
         public string Answer_D 
         { 
             get { return answer[Current_Question][3]; }
-            set { answer[Count_Question-1][3] = value; }
+            set { answer[Current_Question][3] = value; }
         }
         
         public void SaveQuestion()
         {
-            using (StreamWriter sw = new StreamWriter("..\\..\\Resources\\question.txt", true))
+            using (StreamWriter sw = new StreamWriter("..\\..\\Resources\\question.txt", true, Encoding.Default))
             {
                 sw.WriteLine(question[Count_Question-1]);
                 for (int i = 0; i < 4; i++)

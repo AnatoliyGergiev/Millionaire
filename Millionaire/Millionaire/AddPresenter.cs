@@ -21,6 +21,7 @@ namespace Millionaire
         private void OnAdd(object sender, EventArgs e)
         {
             // В ответ на изменения в Представлении необходимо изменить Модель
+            _game.Current_Question = _game.Count_Question;
             _game.Question = _addview.Question;
             _game.Answer_A = _addview.Answer_A;
             _game.Answer_B = _addview.Answer_B;

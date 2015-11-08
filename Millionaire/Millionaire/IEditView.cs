@@ -16,7 +16,7 @@ namespace Millionaire
         int Current_Question { get; }
         int MaxQuestions { set; }
         event EventHandler<EventArgs> Edit;
-        event EventHandler<EventArgs> Update;
+        event EventHandler<EventArgs> Update_v;
 
     }
 }

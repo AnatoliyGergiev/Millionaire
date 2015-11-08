@@ -15,9 +15,9 @@ namespace Millionaire
             _editview = editview;
             // Презентер подписывается на уведомления о событиях Представления
             _editview.Edit += new EventHandler<EventArgs>(OnEdit);
-            _editview.Update += new EventHandler<EventArgs>(UpdateView);
+            _editview.Update_v += new EventHandler<EventArgs>(UpdateView);
             _game.Current_Question = 0;
-            _editview.MaxQuestions = _game.Count_Question;
+            _editview.MaxQuestions = _game.Count_Question-1;
             UpdateView();
         }
 
@@ -29,7 +29,7 @@ namespace Millionaire
             _game.Answer_B = _editview.Answer_B;
             _game.Answer_C = _editview.Answer_C;
             _game.Answer_D = _editview.Answer_D;
-            _game.SaveQuestion();
+            _game.SaveQuestions();
         }
 
         private void UpdateView()

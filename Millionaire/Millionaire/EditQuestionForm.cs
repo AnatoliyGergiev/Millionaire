@@ -47,7 +47,7 @@ namespace Millionaire
         }
 
         public event EventHandler<EventArgs> Edit;
-        public event EventHandler<EventArgs> Update;
+        public event EventHandler<EventArgs> Update_v;
     
         public EditQuestionForm()
         {
@@ -57,8 +57,8 @@ namespace Millionaire
         private void numericUpDown_Edit_ValueChanged(object sender, EventArgs e)
         {
             int num = Current_Question;
-            if (Update != null)
-                Update(this, EventArgs.Empty);
+            if (Update_v != null)
+                Update_v(this, EventArgs.Empty);
         }
 
         private void button_Edit_Click(object sender, EventArgs e)
