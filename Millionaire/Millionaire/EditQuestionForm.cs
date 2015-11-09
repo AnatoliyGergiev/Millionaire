@@ -67,5 +67,10 @@ namespace Millionaire
                 Edit(this, EventArgs.Empty);
             DialogResult = DialogResult.OK;
         }
+
+        private void button_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

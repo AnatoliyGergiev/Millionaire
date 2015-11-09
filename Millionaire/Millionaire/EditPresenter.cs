@@ -18,7 +18,7 @@ namespace Millionaire
             _editview.Update_v += new EventHandler<EventArgs>(UpdateView);
             _game.Current_Question = 0;
             _editview.MaxQuestions = _game.Count_Question-1;
-            UpdateView();
+            UpdateView(this, null);
         }
 
         private void OnEdit(object sender, EventArgs e)
@@ -31,25 +31,15 @@ namespace Millionaire
             _game.Answer_D = _editview.Answer_D;
             _game.SaveQuestions();
         }
-
-        private void UpdateView()
-        {
-            _editview.Question = _game.Question;
-            _editview.Answer_A = _game.Answer_A;
-            _editview.Answer_B = _game.Answer_B;
-            _editview.Answer_C = _game.Answer_C;
-            _editview.Answer_D = _game.Answer_D;
-            _game.Current_Question = _editview.Current_Question;
-        }
+               
         private void UpdateView(object sender, EventArgs e)
         {
+            _game.Current_Question = _editview.Current_Question;
             _editview.Question = _game.Question;
             _editview.Answer_A = _game.Answer_A;
             _editview.Answer_B = _game.Answer_B;
             _editview.Answer_C = _game.Answer_C;
             _editview.Answer_D = _game.Answer_D;
-            _game.Current_Question = _editview.Current_Question;
-
         }
     }
 }

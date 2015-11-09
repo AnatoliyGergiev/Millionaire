@@ -19,3 +19,4 @@ C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\b
 C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\obj\Debug\Millionaire.AddQuestionForm.resources
 C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\obj\Debug\Millionaire.DeleteQuestionForm.resources
 C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\obj\Debug\Millionaire.EditQuestionForm.resources
+C:\Users\Анатолий\Documents\GitHub\Millionaire\Millionaire\Millionaire\obj\Debug\Millionaire.AboutForm.resources

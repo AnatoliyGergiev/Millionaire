@@ -380,11 +380,11 @@ namespace Millionaire
 
         private void удалитьВопросToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddQuestionForm addQuestionForm = new AddQuestionForm();
-            AddPresenter addPresenter = new AddPresenter(addQuestionForm);
-            if (addQuestionForm.ShowDialog() == DialogResult.OK)
+            DeleteQuestionForm deleteQuestionForm = new DeleteQuestionForm();
+            DeletePresenter deletePresenter = new DeletePresenter(deleteQuestionForm);
+            if (deleteQuestionForm.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Вопрос успешно добавлен!", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Вопрос успешно удален!", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -396,6 +396,12 @@ namespace Millionaire
             {
                 MessageBox.Show("Вопрос успешно изменён!", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.ShowDialog();
         }
     }  
 }  

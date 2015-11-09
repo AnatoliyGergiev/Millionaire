@@ -37,7 +37,7 @@ namespace Millionaire
             get { Right_Answer = answer[Current_Question][0]; return answer[Current_Question][0]; }
             set
             {
-                if (Current_Question == Count_Question++) 
+                if (Current_Question == Count_Question) 
                 { 
                     answer.Add(new Answer()); 
                     answer[Current_Question][0] = value; 
@@ -66,14 +66,14 @@ namespace Millionaire
         {
             using (StreamWriter sw = new StreamWriter("..\\..\\Resources\\question.txt", true, Encoding.Default))
             {
-                sw.WriteLine(question[Count_Question-1]);
+                sw.WriteLine(question[Count_Question]);
                 for (int i = 0; i < 4; i++)
-                    sw.WriteLine(answer[Count_Question-1][i]);
+                    sw.WriteLine(answer[Count_Question][i]);
             }
         }
         public void SaveQuestions()
         {
-            using (StreamWriter sw = new StreamWriter("..\\..\\Resources\\question.txt", false))
+            using (StreamWriter sw = new StreamWriter("..\\..\\Resources\\question.txt", false, Encoding.Default))
             {
                 for (int n = 0; n < Count_Question; n++)
                 {
@@ -95,10 +95,14 @@ namespace Millionaire
             //{
             //    n = rnd.Next(0, 28) * 5;
             //} while (n <= 14);
-            Download(0);
-            Number_Question = 0;
-            Current_Question = rnd.Next(0, Count_Question-1);
-            //OnStart();
+            if (Download() == 0)
+                Current_Question = 0;
+            else
+            {
+                Number_Question = 0;
+                Current_Question = rnd.Next(0, Count_Question - 1);
+                //OnStart();
+            }
         }
 
         /*private void OnStart()
@@ -112,7 +116,7 @@ namespace Millionaire
                 form.Answer_D = answer[i][3];
             }
         }*/
-        private void Download(int n)
+        private int Download()
         {
             using (StreamReader sr = new StreamReader("..\\..\\Resources\\question.txt", Encoding.Default))
             {
@@ -142,6 +146,7 @@ namespace Millionaire
                 answer.RemoveAt(i);
                 Count_Question = i;
             }
+            return Count_Question;
         }
         public bool IsAnswerRight()
         {

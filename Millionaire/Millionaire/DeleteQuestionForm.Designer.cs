@@ -28,21 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox_Question = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button_Delete = new System.Windows.Forms.Button();
             this.numericUpDown_Delete = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.button_Cancel = new System.Windows.Forms.Button();
+            this.textBox_Question = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Delete)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox_Question
-            // 
-            this.textBox_Question.Location = new System.Drawing.Point(24, 95);
-            this.textBox_Question.Name = "textBox_Question";
-            this.textBox_Question.Size = new System.Drawing.Size(330, 22);
-            this.textBox_Question.TabIndex = 0;
             // 
             // label1
             // 
@@ -55,12 +48,13 @@
             // 
             // button_Delete
             // 
-            this.button_Delete.Location = new System.Drawing.Point(38, 134);
+            this.button_Delete.Location = new System.Drawing.Point(38, 164);
             this.button_Delete.Name = "button_Delete";
             this.button_Delete.Size = new System.Drawing.Size(118, 37);
             this.button_Delete.TabIndex = 2;
             this.button_Delete.Text = "Удалить";
             this.button_Delete.UseVisualStyleBackColor = true;
+            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
             // 
             // numericUpDown_Delete
             // 
@@ -68,6 +62,7 @@
             this.numericUpDown_Delete.Name = "numericUpDown_Delete";
             this.numericUpDown_Delete.Size = new System.Drawing.Size(47, 22);
             this.numericUpDown_Delete.TabIndex = 3;
+            this.numericUpDown_Delete.ValueChanged += new System.EventHandler(this.numericUpDown_Delete_ValueChanged);
             // 
             // label2
             // 
@@ -80,24 +75,36 @@
             // 
             // button_Cancel
             // 
-            this.button_Cancel.Location = new System.Drawing.Point(214, 134);
+            this.button_Cancel.Location = new System.Drawing.Point(214, 164);
             this.button_Cancel.Name = "button_Cancel";
             this.button_Cancel.Size = new System.Drawing.Size(118, 37);
             this.button_Cancel.TabIndex = 2;
             this.button_Cancel.Text = "Отмена";
             this.button_Cancel.UseVisualStyleBackColor = true;
+            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
+            // 
+            // textBox_Question
+            // 
+            this.textBox_Question.Location = new System.Drawing.Point(5, 88);
+            this.textBox_Question.Multiline = true;
+            this.textBox_Question.Name = "textBox_Question";
+            this.textBox_Question.Size = new System.Drawing.Size(367, 60);
+            this.textBox_Question.TabIndex = 15;
             // 
             // DeleteQuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 193);
+            this.ClientSize = new System.Drawing.Size(376, 219);
+            this.Controls.Add(this.textBox_Question);
             this.Controls.Add(this.numericUpDown_Delete);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.button_Delete);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox_Question);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DeleteQuestionForm";
             this.Text = "DeleteQuestionForm";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Delete)).EndInit();
@@ -108,11 +115,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox_Question;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.NumericUpDown numericUpDown_Delete;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button_Cancel;
+        private System.Windows.Forms.TextBox textBox_Question;
     }
 }

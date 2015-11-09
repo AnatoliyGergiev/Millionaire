@@ -71,6 +71,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label_A = new System.Windows.Forms.Label();
+            this.новаяИграToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.закончитьИгруToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hint_50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_tel)).BeginInit();
@@ -224,6 +227,10 @@
             // 
             // играToolStripMenuItem
             // 
+            this.играToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.новаяИграToolStripMenuItem,
+            this.закончитьИгруToolStripMenuItem,
+            this.выходToolStripMenuItem});
             this.играToolStripMenuItem.Name = "играToolStripMenuItem";
             this.играToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.играToolStripMenuItem.Text = "Игра";
@@ -264,6 +271,7 @@
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -565,6 +573,24 @@
             this.label_A.TabIndex = 24;
             this.label_A.Text = "А";
             // 
+            // новаяИграToolStripMenuItem
+            // 
+            this.новаяИграToolStripMenuItem.Name = "новаяИграToolStripMenuItem";
+            this.новаяИграToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
+            this.новаяИграToolStripMenuItem.Text = "Новая игра";
+            // 
+            // закончитьИгруToolStripMenuItem
+            // 
+            this.закончитьИгруToolStripMenuItem.Name = "закончитьИгруToolStripMenuItem";
+            this.закончитьИгруToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
+            this.закончитьИгруToolStripMenuItem.Text = "Закончить игру";
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
+            this.выходToolStripMenuItem.Text = "Выход";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -661,6 +687,9 @@
         private System.Windows.Forms.ToolStripMenuItem добавитьВопросToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьВопросToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изменитьВопросToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem новаяИграToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem закончитьИгруToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
 
     }
 }
