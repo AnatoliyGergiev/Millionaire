@@ -39,6 +39,9 @@
             this.button_stop = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.играToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.новаяИграToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.закончитьИгруToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.администраToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьВопросToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьВопросToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,9 +74,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label_A = new System.Windows.Forms.Label();
-            this.новаяИграToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.закончитьИгруToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label_8 = new System.Windows.Forms.Label();
+            this.label_4 = new System.Windows.Forms.Label();
+            this.label_12 = new System.Windows.Forms.Label();
+            this.label_1 = new System.Windows.Forms.Label();
+            this.label_9 = new System.Windows.Forms.Label();
+            this.label_2 = new System.Windows.Forms.Label();
+            this.label_10 = new System.Windows.Forms.Label();
+            this.label_5 = new System.Windows.Forms.Label();
+            this.label_13 = new System.Windows.Forms.Label();
+            this.label_3 = new System.Windows.Forms.Label();
+            this.label_6 = new System.Windows.Forms.Label();
+            this.label_11 = new System.Windows.Forms.Label();
+            this.label_7 = new System.Windows.Forms.Label();
+            this.label_14 = new System.Windows.Forms.Label();
+            this.label_15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hint_50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hint_tel)).BeginInit();
@@ -85,6 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_new)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox_hall.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -104,7 +121,6 @@
             // 
             // hint_50
             // 
-            this.hint_50.BackgroundImage = global::Millionaire.Properties.Resources._1;
             this.hint_50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.hint_50.Location = new System.Drawing.Point(8, 21);
             this.hint_50.Name = "hint_50";
@@ -115,7 +131,6 @@
             // 
             // hint_tel
             // 
-            this.hint_tel.BackgroundImage = global::Millionaire.Properties.Resources._2;
             this.hint_tel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.hint_tel.Location = new System.Drawing.Point(60, 21);
             this.hint_tel.Name = "hint_tel";
@@ -126,7 +141,6 @@
             // 
             // hint_hall
             // 
-            this.hint_hall.BackgroundImage = global::Millionaire.Properties.Resources._3;
             this.hint_hall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.hint_hall.Location = new System.Drawing.Point(112, 21);
             this.hint_hall.Name = "hint_hall";
@@ -211,6 +225,7 @@
             this.button_stop.Text = "Стоп";
             this.button_stop.UseVisualStyleBackColor = false;
             this.button_stop.Visible = false;
+            this.button_stop.Click += new System.EventHandler(this.button_stop_Click);
             // 
             // menuStrip1
             // 
@@ -234,6 +249,27 @@
             this.играToolStripMenuItem.Name = "играToolStripMenuItem";
             this.играToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.играToolStripMenuItem.Text = "Игра";
+            // 
+            // новаяИграToolStripMenuItem
+            // 
+            this.новаяИграToolStripMenuItem.Name = "новаяИграToolStripMenuItem";
+            this.новаяИграToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
+            this.новаяИграToolStripMenuItem.Text = "Новая игра";
+            this.новаяИграToolStripMenuItem.Click += new System.EventHandler(this.pictureBox_new_Click);
+            // 
+            // закончитьИгруToolStripMenuItem
+            // 
+            this.закончитьИгруToolStripMenuItem.Name = "закончитьИгруToolStripMenuItem";
+            this.закончитьИгруToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
+            this.закончитьИгруToolStripMenuItem.Text = "Закончить игру";
+            this.закончитьИгруToolStripMenuItem.Click += new System.EventHandler(this.button_stop_Click);
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.pictureBox_exit_Click);
             // 
             // администраToolStripMenuItem
             // 
@@ -436,7 +472,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Millionaire.Properties.Resources.mil;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(-44, -7);
             this.pictureBox1.Name = "pictureBox1";
@@ -573,23 +608,195 @@
             this.label_A.TabIndex = 24;
             this.label_A.Text = "А";
             // 
-            // новаяИграToolStripMenuItem
+            // groupBox2
             // 
-            this.новаяИграToolStripMenuItem.Name = "новаяИграToolStripMenuItem";
-            this.новаяИграToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
-            this.новаяИграToolStripMenuItem.Text = "Новая игра";
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox2.Controls.Add(this.label_8);
+            this.groupBox2.Controls.Add(this.label_4);
+            this.groupBox2.Controls.Add(this.label_12);
+            this.groupBox2.Controls.Add(this.label_1);
+            this.groupBox2.Controls.Add(this.label_9);
+            this.groupBox2.Controls.Add(this.label_2);
+            this.groupBox2.Controls.Add(this.label_10);
+            this.groupBox2.Controls.Add(this.label_5);
+            this.groupBox2.Controls.Add(this.label_13);
+            this.groupBox2.Controls.Add(this.label_3);
+            this.groupBox2.Controls.Add(this.label_6);
+            this.groupBox2.Controls.Add(this.label_11);
+            this.groupBox2.Controls.Add(this.label_7);
+            this.groupBox2.Controls.Add(this.label_14);
+            this.groupBox2.Controls.Add(this.label_15);
+            this.groupBox2.Location = new System.Drawing.Point(542, 81);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(165, 430);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Visible = false;
             // 
-            // закончитьИгруToolStripMenuItem
+            // label_8
             // 
-            this.закончитьИгруToolStripMenuItem.Name = "закончитьИгруToolStripMenuItem";
-            this.закончитьИгруToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
-            this.закончитьИгруToolStripMenuItem.Text = "Закончить игру";
+            this.label_8.AutoSize = true;
+            this.label_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_8.ForeColor = System.Drawing.Color.Yellow;
+            this.label_8.Location = new System.Drawing.Point(19, 198);
+            this.label_8.Name = "label_8";
+            this.label_8.Size = new System.Drawing.Size(134, 25);
+            this.label_8.TabIndex = 0;
+            this.label_8.Text = "  8 -        8 000";
             // 
-            // выходToolStripMenuItem
+            // label_4
             // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
-            this.выходToolStripMenuItem.Text = "Выход";
+            this.label_4.AutoSize = true;
+            this.label_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_4.ForeColor = System.Drawing.Color.Yellow;
+            this.label_4.Location = new System.Drawing.Point(19, 301);
+            this.label_4.Name = "label_4";
+            this.label_4.Size = new System.Drawing.Size(133, 25);
+            this.label_4.TabIndex = 0;
+            this.label_4.Text = "  4 -           500";
+            // 
+            // label_12
+            // 
+            this.label_12.AutoSize = true;
+            this.label_12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_12.ForeColor = System.Drawing.Color.Yellow;
+            this.label_12.Location = new System.Drawing.Point(19, 96);
+            this.label_12.Name = "label_12";
+            this.label_12.Size = new System.Drawing.Size(137, 25);
+            this.label_12.TabIndex = 0;
+            this.label_12.Text = "12 -    125 000";
+            // 
+            // label_1
+            // 
+            this.label_1.AutoSize = true;
+            this.label_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_1.ForeColor = System.Drawing.Color.Yellow;
+            this.label_1.Location = new System.Drawing.Point(19, 383);
+            this.label_1.Name = "label_1";
+            this.label_1.Size = new System.Drawing.Size(133, 25);
+            this.label_1.TabIndex = 0;
+            this.label_1.Text = "  1 -           100";
+            // 
+            // label_9
+            // 
+            this.label_9.AutoSize = true;
+            this.label_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_9.ForeColor = System.Drawing.Color.Yellow;
+            this.label_9.Location = new System.Drawing.Point(19, 172);
+            this.label_9.Name = "label_9";
+            this.label_9.Size = new System.Drawing.Size(135, 25);
+            this.label_9.TabIndex = 0;
+            this.label_9.Text = "  9 -      16 000";
+            // 
+            // label_2
+            // 
+            this.label_2.AutoSize = true;
+            this.label_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_2.ForeColor = System.Drawing.Color.Yellow;
+            this.label_2.Location = new System.Drawing.Point(19, 355);
+            this.label_2.Name = "label_2";
+            this.label_2.Size = new System.Drawing.Size(133, 25);
+            this.label_2.TabIndex = 0;
+            this.label_2.Text = "  2 -           200";
+            // 
+            // label_10
+            // 
+            this.label_10.AutoSize = true;
+            this.label_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_10.ForeColor = System.Drawing.Color.Orange;
+            this.label_10.Location = new System.Drawing.Point(19, 147);
+            this.label_10.Name = "label_10";
+            this.label_10.Size = new System.Drawing.Size(136, 25);
+            this.label_10.TabIndex = 0;
+            this.label_10.Text = "10 -      32 000";
+            // 
+            // label_5
+            // 
+            this.label_5.AutoSize = true;
+            this.label_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_5.ForeColor = System.Drawing.Color.Orange;
+            this.label_5.Location = new System.Drawing.Point(19, 275);
+            this.label_5.Name = "label_5";
+            this.label_5.Size = new System.Drawing.Size(134, 25);
+            this.label_5.TabIndex = 0;
+            this.label_5.Text = "  5 -        1 000";
+            // 
+            // label_13
+            // 
+            this.label_13.AutoSize = true;
+            this.label_13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_13.ForeColor = System.Drawing.Color.Yellow;
+            this.label_13.Location = new System.Drawing.Point(19, 69);
+            this.label_13.Name = "label_13";
+            this.label_13.Size = new System.Drawing.Size(137, 25);
+            this.label_13.TabIndex = 0;
+            this.label_13.Text = "13 -    250 000";
+            // 
+            // label_3
+            // 
+            this.label_3.AutoSize = true;
+            this.label_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_3.ForeColor = System.Drawing.Color.Yellow;
+            this.label_3.Location = new System.Drawing.Point(19, 327);
+            this.label_3.Name = "label_3";
+            this.label_3.Size = new System.Drawing.Size(133, 25);
+            this.label_3.TabIndex = 0;
+            this.label_3.Text = "  3 -           300";
+            // 
+            // label_6
+            // 
+            this.label_6.AutoSize = true;
+            this.label_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_6.ForeColor = System.Drawing.Color.Yellow;
+            this.label_6.Location = new System.Drawing.Point(19, 249);
+            this.label_6.Name = "label_6";
+            this.label_6.Size = new System.Drawing.Size(134, 25);
+            this.label_6.TabIndex = 0;
+            this.label_6.Text = "  6 -        2 000";
+            // 
+            // label_11
+            // 
+            this.label_11.AutoSize = true;
+            this.label_11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_11.ForeColor = System.Drawing.Color.Yellow;
+            this.label_11.Location = new System.Drawing.Point(19, 122);
+            this.label_11.Name = "label_11";
+            this.label_11.Size = new System.Drawing.Size(136, 25);
+            this.label_11.TabIndex = 0;
+            this.label_11.Text = "11 -      64 000";
+            // 
+            // label_7
+            // 
+            this.label_7.AutoSize = true;
+            this.label_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_7.ForeColor = System.Drawing.Color.Yellow;
+            this.label_7.Location = new System.Drawing.Point(19, 223);
+            this.label_7.Name = "label_7";
+            this.label_7.Size = new System.Drawing.Size(134, 25);
+            this.label_7.TabIndex = 0;
+            this.label_7.Text = "  7 -        4 000";
+            // 
+            // label_14
+            // 
+            this.label_14.AutoSize = true;
+            this.label_14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_14.ForeColor = System.Drawing.Color.Yellow;
+            this.label_14.Location = new System.Drawing.Point(19, 42);
+            this.label_14.Name = "label_14";
+            this.label_14.Size = new System.Drawing.Size(137, 25);
+            this.label_14.TabIndex = 0;
+            this.label_14.Text = "14 -    500 000";
+            // 
+            // label_15
+            // 
+            this.label_15.AutoSize = true;
+            this.label_15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_15.ForeColor = System.Drawing.Color.Orange;
+            this.label_15.Location = new System.Drawing.Point(19, 16);
+            this.label_15.Name = "label_15";
+            this.label_15.Size = new System.Drawing.Size(138, 25);
+            this.label_15.TabIndex = 0;
+            this.label_15.Text = "15 - 1 000 000";
             // 
             // MainForm
             // 
@@ -597,6 +804,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(707, 512);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox_hall);
             this.Controls.Add(this.button_Next);
             this.Controls.Add(this.text_tel_hint);
@@ -637,6 +845,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox_hall.ResumeLayout(false);
             this.groupBox_hall.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -690,6 +900,22 @@
         private System.Windows.Forms.ToolStripMenuItem новаяИграToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem закончитьИгруToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label_8;
+        private System.Windows.Forms.Label label_4;
+        private System.Windows.Forms.Label label_12;
+        private System.Windows.Forms.Label label_1;
+        private System.Windows.Forms.Label label_9;
+        private System.Windows.Forms.Label label_2;
+        private System.Windows.Forms.Label label_10;
+        private System.Windows.Forms.Label label_5;
+        private System.Windows.Forms.Label label_13;
+        private System.Windows.Forms.Label label_3;
+        private System.Windows.Forms.Label label_6;
+        private System.Windows.Forms.Label label_11;
+        private System.Windows.Forms.Label label_7;
+        private System.Windows.Forms.Label label_14;
+        private System.Windows.Forms.Label label_15;
 
     }
 }

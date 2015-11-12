@@ -13,10 +13,6 @@ namespace Millionaire
 {
     public partial class MainForm : Form, IGameView
     {
-        public string Table 
-        {
-            set { listBox1.Text = value; }
-        }
         public string Answer_A
         {
             set { button_A.Text = value; }
@@ -44,7 +40,9 @@ namespace Millionaire
 
         public event EventHandler<EventArgs> Next_q;
         public event EventHandler<EventArgs> Select_button;
-        SoundPlayer player;
+        private SoundPlayer player;
+        private Label[] list;// = new Label[15];
+        private bool allow_new;
         public MainForm()
         {
             InitializeComponent();
@@ -54,31 +52,42 @@ namespace Millionaire
             button_stop.Visible = true;
             pictureBox_exit.Visible = true;
             pictureBox_new.Visible = true;
-
-            this.listBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstBox_DrawItem);  
+            list=new Label[]{label_1, label_2, label_3, label_4, label_5, label_6, label_7,
+                label_8, label_9, label_10, label_11, label_12, label_13, label_14, label_15};
+            allow_new = true;
         }
 
         private void pictureBox_new_Click(object sender, EventArgs e)
         {
-            if (pictureBox1.Visible != true)
+            if (allow_new)
             {
                 pictureBox1.Visible = true;
+                pictureBox1.BackgroundImage = new Bitmap("../../resources/Image/mil.jpg");
                 MainPresenter pr = new MainPresenter(this);
                 player.Stop();
-                listBox1.Visible = true;
+                groupBox2.Visible = true;
+                foreach (Label l in list)
+                    l.BackColor = Color.Black;
                 button_A.Visible = true;
+                button_A.BackColor = Color.Black;
                 button_B.Visible = true;
+                button_B.BackColor = Color.Black;
                 button_C.Visible = true;
+                button_C.BackColor = Color.Black;
                 button_D.Visible = true;
+                button_D.BackColor = Color.Black;
                 textBox_question.Visible = true;
                 groupBox1.Visible = true;
+                hint_50.BackgroundImage = new Bitmap("../../resources/Image/1.jpg");
+                hint_tel.BackgroundImage = new Bitmap("../../resources/Image/2.jpg");
+                hint_hall.BackgroundImage = new Bitmap("../../resources/Image/3.jpg");
                 button1.Visible = true;
                 button2.Visible = true;
                 button3.Visible = true;
                 button4.Visible = true;
                 player.SoundLocation = "../../resources/sound/gong.wav";
                 player.Play();
-                listBox1.SelectedIndex = 14 - Number_Question;
+                list[0].BackColor = Color.Green;
                 /*Button[] bn = { button_A, button_B, button_C, button_D };
                 picture_True.Visible = false;
                 text_True.Visible = false;
@@ -116,6 +125,7 @@ namespace Millionaire
                 player.SoundLocation = "../../resources/sound/gong.wav";
                 player.Play();
                 listBox1.SelectedIndex = 14 - Number_Question;*/
+                allow_new = false;
             }
         }
 
@@ -161,13 +171,39 @@ namespace Millionaire
             x.BackColor = Color.Green;
             Button a = sender as Button;
             a.BackColor = Color.Red;
-            MessageBox.Show("Game Over!!!");
-            Close();
+            Win(Number_Question-1);
         }
-        public void Win()
+        public void Win(int number_question)
         {
-            player.SoundLocation = "../../resources/sound/winner.wav";
-            player.Play();
+            if (number_question == 14)
+            {
+                player.SoundLocation = "../../resources/sound/winner.wav";
+                player.Play();
+                pictureBox1.BackgroundImage = new Bitmap("../../resources/Image/Vifrash.jpg");
+                MessageBox.Show(this, "Поздравляем, Вы выиграли 1 000 000!");
+            }
+            else if (number_question >= 4 && number_question <9)
+            {
+                player.SoundLocation = "../../resources/sound/summa.wav";
+                player.Play();
+                pictureBox1.BackgroundImage = new Bitmap("../../resources/Image/vig.jpg");
+                MessageBox.Show(this, "Вы выиграли 1 000!");
+            }
+            else if (number_question == 0)
+            {
+                player.SoundLocation = "../../resources/sound/false.wav";
+                player.Play();
+                pictureBox1.BackgroundImage = new Bitmap("../../resources/Image/vig.jpg");
+                MessageBox.Show(this, "Вы выиграли 0!");
+            }
+            else if (number_question >= 9)
+            {
+                player.SoundLocation = "../../resources/sound/summa.wav";
+                player.Play();
+                pictureBox1.BackgroundImage = new Bitmap("../../resources/Image/vig.jpg");
+                MessageBox.Show(this, "Вы выиграли 32 000!");
+            }
+            allow_new = true;
         }
 
         private void button_C_Click(object sender, EventArgs e)
@@ -219,8 +255,9 @@ namespace Millionaire
             player.SoundLocation = "../../resources/sound/gong.wav";
             player.Play();
             NextQuestion();
-
-            listBox1.SelectedIndex = 14 - Number_Question;
+            list[Number_Question - 1].BackColor = Color.Black;
+            list[Number_Question].BackColor = Color.Green;
+            //listBox1.SelectedIndex = 14 - Number_Question;
 
             foreach (Button b in bn)
             {
@@ -228,47 +265,6 @@ namespace Millionaire
                 b.Enabled = true;
             }
         }
-
-
-
-        private void lstBox_DrawItem(object sender,   
-                      System.Windows.Forms.DrawItemEventArgs e)  
-                {  
-                    // Перерисовываем фон всех элементов ListBox.  
-                    e.DrawBackground();  
-              
-                    // Создаем объект Brush.  
-                    Brush myBrush = Brushes.Black;  
-  
-                    // Определяем номер текущего элемента  
-                    switch (e.Index)  
-                    {  
-                        case 0:  
-                            myBrush = Brushes.Orange;  
-                            break;  
-                        case 5:  
-                            myBrush = Brushes.Orange;  
-                            break;  
-                        case 10:  
-                            myBrush = Brushes.Orange;  
-                            break;  
-                    }  
-  
-                    //Если необходимо, закрашиваем фон   
-                    //активного элемента в новый цвет  
-                    //e.Graphics.FillRectangle(myBrush, e.Bounds);  
-              
-                    // Перерисовываем текст текущего элемента  
-                    e.Graphics.DrawString(  
-                        ((ListBox)sender).Items[e.Index].ToString(),   
-                        e.Font, myBrush, e.Bounds,   
-                        StringFormat.GenericDefault);  
-  
-                    // Если ListBox в фокусе, рисуем прямоугольник   
-                    //вокруг активного элемента.  
-                    e.DrawFocusRectangle();  
-                }
-
         private void pictureBox_exit_Click(object sender, EventArgs e)
         {
             Close();
@@ -370,6 +366,7 @@ namespace Millionaire
 
         private void добавитьВопросToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            player.Stop();
             AddQuestionForm addQuestionForm = new AddQuestionForm();
             AddPresenter addPresenter = new AddPresenter(addQuestionForm);
             if (addQuestionForm.ShowDialog() == DialogResult.OK)
@@ -380,6 +377,7 @@ namespace Millionaire
 
         private void удалитьВопросToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            player.Stop();
             DeleteQuestionForm deleteQuestionForm = new DeleteQuestionForm();
             DeletePresenter deletePresenter = new DeletePresenter(deleteQuestionForm);
             if (deleteQuestionForm.ShowDialog() == DialogResult.OK)
@@ -390,6 +388,7 @@ namespace Millionaire
 
         private void изменитьВопросToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            player.Stop();
             EditQuestionForm editQuestionForm = new EditQuestionForm();
             EditPresenter editPresenter = new EditPresenter(editQuestionForm);
             if (editQuestionForm.ShowDialog() == DialogResult.OK)
@@ -400,8 +399,17 @@ namespace Millionaire
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            player.Stop();
             AboutForm aboutForm = new AboutForm();
             aboutForm.ShowDialog();
+        }
+
+        private void button_stop_Click(object sender, EventArgs e)
+        {
+            if (button_Next.Visible == true)
+                Win(Number_Question);
+            else
+                Win(Number_Question - 1);
         }
     }  
 }  

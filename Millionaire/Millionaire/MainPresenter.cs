@@ -31,11 +31,7 @@ namespace Millionaire
                 //_gameview.NextQuestion();
             }
             else
-            {
-                SoundPlayer player = new SoundPlayer("../../resources/sound/false.wav");
-                player.Play();
                 _gameview.GameOver(sender);
-            }
 
             // В данной форме этот вызов не нужен, однако в общем
             // случае изменение части Модели может привести к изменениям
@@ -49,9 +45,10 @@ namespace Millionaire
         {
             Random rnd = new Random();
             if (_gameview.Number_Question == 14)
-                _gameview.Win();
+                _gameview.Win(14);
             else
             {
+                _game.Remove_Question(_game.Current_Question);
                 _gameview.Number_Question++;
                 _game.Number_Question = _gameview.Number_Question;
                 _gameview.Current_Question = rnd.Next(0,_game.Count_Question-1);
@@ -63,6 +60,7 @@ namespace Millionaire
 
         private void UpdateView()
         {
+            _gameview.Number_Question = _game.Number_Question;
             _gameview.Question = _game.Question;
             Random rnd = new Random();
             List<string> ans = new List<string>();

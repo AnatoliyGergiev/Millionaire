@@ -13,7 +13,6 @@ namespace Millionaire
         string Answer_B { set; }
         string Answer_C {  set; }
         string Answer_D {  set; }
-        string Table { set; }
         string User_Answer { get; set; }
         string Right_Answer { get; set; }
         int Number_Question { get; set; }
@@ -21,7 +20,7 @@ namespace Millionaire
         void GameOver(object sender);
         void NextQuestion();
         void TrueAnswer(object sender);
-        void Win();
+        void Win(int number_question);
 
 
         event EventHandler<EventArgs> Select_button;
