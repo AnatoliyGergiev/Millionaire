@@ -57,6 +57,7 @@
     <Compile Include="AddQuestionForm.Designer.cs">
       <DependentUpon>AddQuestionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBStorage.cs" />
     <Compile Include="DeletePresenter.cs" />
     <Compile Include="DeleteQuestionForm.cs">
       <SubType>Form</SubType>
@@ -71,9 +72,11 @@
     <Compile Include="EditQuestionForm.Designer.cs">
       <DependentUpon>EditQuestionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FileStorage.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="IAddView.cs" />
     <Compile Include="IDeleteView.cs" />
+    <Compile Include="IStorage.cs" />
     <Compile Include="IEditView.cs" />
     <Compile Include="IGameView.cs" />
     <Compile Include="MainForm.cs">

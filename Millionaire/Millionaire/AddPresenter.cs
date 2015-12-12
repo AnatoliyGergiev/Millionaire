@@ -8,14 +8,13 @@ namespace Millionaire
 {
     class AddPresenter
     {
-        private readonly Game _game = new Game();
+        private readonly Game _game = new Game(new DBStorage());
         private readonly IAddView _addview;
         public AddPresenter(IAddView addview)
         {
             _addview = addview;
             // Презентер подписывается на уведомления о событиях Представления
             _addview.Add += new EventHandler<EventArgs>(OnAdd);
-            //UpdateView();
         }
 
         private void OnAdd(object sender, EventArgs e)

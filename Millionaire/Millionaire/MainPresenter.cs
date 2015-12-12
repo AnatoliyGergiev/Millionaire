@@ -9,7 +9,7 @@ namespace Millionaire
 {
     class MainPresenter
     {
-        private readonly Game _game = new Game();
+        private readonly Game _game = new Game(new DBStorage());
         private readonly IGameView _gameview;
         public MainPresenter(IGameView gameview)
         {
@@ -28,7 +28,6 @@ namespace Millionaire
             if (_game.IsAnswerRight())
             {
                 _gameview.TrueAnswer(sender);
-                //_gameview.NextQuestion();
             }
             else
                 _gameview.GameOver(sender);

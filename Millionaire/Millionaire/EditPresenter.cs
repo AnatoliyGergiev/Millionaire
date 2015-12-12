@@ -8,7 +8,7 @@ namespace Millionaire
 {
     class EditPresenter
     {
-        private readonly Game _game = new Game();
+        private readonly Game _game = new Game(new DBStorage());
         private readonly IEditView _editview;
         public EditPresenter(IEditView editview)
         {
@@ -24,12 +24,13 @@ namespace Millionaire
         private void OnEdit(object sender, EventArgs e)
         {
             // В ответ на изменения в Представлении необходимо изменить Модель
+            string old_question = _game.Question;
             _game.Question = _editview.Question;
             _game.Answer_A = _editview.Answer_A;
             _game.Answer_B = _editview.Answer_B;
             _game.Answer_C = _editview.Answer_C;
             _game.Answer_D = _editview.Answer_D;
-            _game.SaveQuestions();
+            _game.EditQuestion(new string[6]{_game.Question,_game.Answer_A,_game.Answer_B, _game.Answer_C, _game.Answer_D, old_question});
         }
                
         private void UpdateView(object sender, EventArgs e)

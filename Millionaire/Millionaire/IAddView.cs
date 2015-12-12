@@ -13,7 +13,6 @@ namespace Millionaire
         string Answer_B { get; set; }
         string Answer_C { get; set; }
         string Answer_D { get; set; }
-
         event EventHandler<EventArgs> Add;
 
     }

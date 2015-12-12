@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace Millionaire
     {
         private readonly List<string> question;
         private readonly List<Answer> answer;
+        private readonly IStorage storage;
         public int Count_Question { get; set; }
         public string User_Answer { get; set; }
         public string Right_Answer { get; set; }
@@ -19,6 +21,7 @@ namespace Millionaire
         public int Current_Question { get; set; }
         public void Remove_Question(int index)
         {
+            storage.RemoveQuestion(question[index], this);
             question.RemoveAt(index);
             answer.RemoveAt(index);
             Count_Question--;
@@ -64,89 +67,100 @@ namespace Millionaire
         
         public void SaveQuestion()
         {
-            using (StreamWriter sw = new StreamWriter("..\\..\\Resources\\question.txt", true, Encoding.Default))
-            {
-                sw.WriteLine(question[Count_Question]);
-                for (int i = 0; i < 4; i++)
-                    sw.WriteLine(answer[Count_Question][i]);
-            }
-        }
-        public void SaveQuestions()
-        {
-            using (StreamWriter sw = new StreamWriter("..\\..\\Resources\\question.txt", false, Encoding.Default))
-            {
-                for (int n = 0; n < Count_Question; n++)
-                {
-                    sw.WriteLine(question[n]);
-                    for (int i = 0; i < 4; i++)
-                        sw.WriteLine(answer[n][i]);
-                }
-            }
+            string[] str = new string[5];
+            str[0] = question[Count_Question];
+            for (int i = 0; i < 4; i++)
+                str[i+1] = answer[Count_Question][i];
+            storage.SaveQuestion(str);
         }
 
-        public Game()//MainForm f)
+        public void EditQuestion(string[] str)
         {
-            //form = f;
+            storage.EditQuestion(str, this);
+        }
+
+        public Game(IStorage storage)
+        {
+            this.storage = storage;
             Random rnd = new Random();
             question = new List<string>();
             answer = new List<Answer>();
-            //int n;
-            //do
-            //{
-            //    n = rnd.Next(0, 28) * 5;
-            //} while (n <= 14);
             if (Download() == 0)
                 Current_Question = 0;
             else
             {
                 Number_Question = 0;
                 Current_Question = rnd.Next(0, Count_Question - 1);
-                //OnStart();
             }
         }
 
-        /*private void OnStart()
-        {
-            int i = 0;
-            {
-                form.Question = question[i];
-                form.Answer_A = answer[i][0];
-                form.Answer_B = answer[i][1];
-                form.Answer_C = answer[i][2];
-                form.Answer_D = answer[i][3];
-            }
-        }*/
         private int Download()
         {
-            using (StreamReader sr = new StreamReader("..\\..\\Resources\\question.txt", Encoding.Default))
+            List<string> str = new List<string>(storage.Download());
+            Count_Question = str.Count/5;
+            for (int i = 0; i < str.Count; i+=5)
             {
-                //for (int i = 0; i < n; i++)
-                //    sr.ReadLine();
-                //for (int i = 0; i < 15; i++)
-                //{
-                //    question.Add(sr.ReadLine());
-                //    for (int j = 0; j < 4; j++)
-                //    {
-                //        answer.Add(new Answer());
-                //        answer[i][j] = sr.ReadLine();
-                //    }
-                //}
-                int i=-1;
-                do
-                {
-                    i++;
-                    question.Add(sr.ReadLine());
-                    answer.Add(new Answer());
-                    for (int j = 0; j < 4; j++)
-                    {
-                        answer[i][j] = sr.ReadLine();
-                    }
-                } while (question[i] != null);
-                question.RemoveAt(i);
-                answer.RemoveAt(i);
-                Count_Question = i;
+                question.Add(str[i]);
+                answer.Add(new Answer());
+                for (int j = 0; j < 4; j++)
+                    answer[question.Count-1][j] = str[i+j+1];
             }
-            return Count_Question;
+
+
+                //Rewriting of data to DB from file
+                //using (StreamReader sr = new StreamReader("..\\..\\Resources\\question.txt", Encoding.Default))
+                //{
+                //    int i = -1;
+                //    do
+                //    {
+                //        i++;
+                //        question.Add(sr.ReadLine());
+                //        answer.Add(new Answer());
+                //        for (int j = 0; j < 4; j++)
+                //        {
+                //            answer[i][j] = sr.ReadLine();
+                //        }
+                //    } while (question[i] != null);
+                //    question.RemoveAt(i);
+                //    answer.RemoveAt(i);
+                //    Count_Question = i;
+                //}
+
+
+                //SqlConnection connect = new SqlConnection();
+                //SqlCommand cmd = null;
+                //SqlTransaction trans = null;
+                //try
+                //{
+                //    connect.ConnectionString = @"Initial Catalog=Millionaire;Data Source=(local);Integrated Security=SSPI";
+                //    connect.Open();
+                //    trans = connect.BeginTransaction();
+                //    cmd = connect.CreateCommand();
+
+                //    cmd.Connection = connect;
+                //    cmd.Transaction = trans;
+
+                //    for (int i = 0; i < Count_Question; i++)
+                //    {
+                //        cmd.CommandText = "insert into Millionaire_table (question, answer1, answer2, answer3, answer4) values ('" + question[i] + "', '" + answer[i][0] + "', '" + answer[i][1] + "', '" + answer[i][2] + "', '" + answer[i][3] + "')";
+                //        cmd.ExecuteNonQuery();
+                //    }
+
+                //    trans.Commit();
+
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message);
+                //    trans.Rollback();
+                //}
+                //finally
+                //{
+                //    cmd.Dispose();
+                //    connect.Close();
+                //}
+
+                return Count_Question;
         }
         public bool IsAnswerRight()
         {

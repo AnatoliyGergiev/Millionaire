@@ -21,10 +21,7 @@ namespace Millionaire
         void NextQuestion();
         void TrueAnswer(object sender);
         void Win(int number_question);
-
-
         event EventHandler<EventArgs> Select_button;
-
         event EventHandler<EventArgs> Next_q;
     }
 }

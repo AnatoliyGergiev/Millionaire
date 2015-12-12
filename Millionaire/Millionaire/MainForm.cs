@@ -43,6 +43,7 @@ namespace Millionaire
         private SoundPlayer player;
         private Label[] list;// = new Label[15];
         private bool allow_new;
+
         public MainForm()
         {
             InitializeComponent();
@@ -88,43 +89,7 @@ namespace Millionaire
                 player.SoundLocation = "../../resources/sound/gong.wav";
                 player.Play();
                 list[0].BackColor = Color.Green;
-                /*Button[] bn = { button_A, button_B, button_C, button_D };
-                picture_True.Visible = false;
-                text_True.Visible = false;
-                button_Next.Visible = false;
-                picture_tel_hint.Visible = false;
-                text_tel_hint.Visible = false;
-                Number_Question = 0;
-                foreach (Button b in bn)
-                {
-                    b.BackColor = Color.Black;
-                    b.Enabled = true;
-                }
-
-                pictureBox1.Visible = true;
-                Presenter pr = new Presenter(this);
-                player.Stop();
-                listBox1.Visible = true;
-                button_A.Visible = true;
-                button_B.Visible = true;
-                button_C.Visible = true;
-                button_D.Visible = true;
-                textBox_question.Visible = true;
-                groupBox1.Visible = true;
-                button1.Visible = true;
-                button2.Visible = true;
-                button3.Visible = true;
-                button4.Visible = true;
-                hint_50.BackgroundImage = new Bitmap("../../Resources/Image/1.jpg");
-                hint_tel.BackgroundImage = new Bitmap("../../Resources/Image/2.jpg");
-                hint_hall.BackgroundImage = new Bitmap("../../Resources/Image/3.jpg");
-                hint_50.Enabled = true;
-                hint_tel.Enabled = true;
-                hint_hall.Enabled = true;
-
-                player.SoundLocation = "../../resources/sound/gong.wav";
-                player.Play();
-                listBox1.SelectedIndex = 14 - Number_Question;*/
+                groupBox_hall.Visible = false;
                 allow_new = false;
             }
         }
@@ -257,7 +222,6 @@ namespace Millionaire
             NextQuestion();
             list[Number_Question - 1].BackColor = Color.Black;
             list[Number_Question].BackColor = Color.Green;
-            //listBox1.SelectedIndex = 14 - Number_Question;
 
             foreach (Button b in bn)
             {
@@ -343,22 +307,6 @@ namespace Millionaire
                     lb[i].Text = pb[i].Value + "%";
                 }
 
-
-                //switch (r)
-                //{
-                //    case 0:
-                //        progressBar1.Value = rnd.Next(40, 90);
-                //        break;
-                //    case 1:
-                //        progressBar2.Value = rnd.Next(40, 90);
-                //        break;
-                //    case 2:
-                //        progressBar3.Value = rnd.Next(40, 90);
-                //        break;
-                //    case 3:
-                //        progressBar4.Value = rnd.Next(40, 90);
-                //        break;
-                //}
                 hint_hall.BackgroundImage = new Bitmap("../../Resources/Image/6.jpg");
                 hint_hall.Enabled = false;
             }

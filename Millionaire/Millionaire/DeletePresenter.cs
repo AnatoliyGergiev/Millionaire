@@ -8,7 +8,7 @@ namespace Millionaire
 {
     class DeletePresenter
     {
-        private readonly Game _game = new Game();
+        private readonly Game _game = new Game(new DBStorage());
         private readonly IDeleteView _deleteview;
         public DeletePresenter(IDeleteView deleteview)
         {
@@ -26,7 +26,7 @@ namespace Millionaire
             // В ответ на изменения в Представлении необходимо изменить Модель
             _game.Remove_Question(_game.Current_Question);
             _game.Question = _deleteview.Question;
-            _game.SaveQuestions();
+            //_game.SaveQuestions();
         }
 
         private void UpdateView(object sender, EventArgs e)

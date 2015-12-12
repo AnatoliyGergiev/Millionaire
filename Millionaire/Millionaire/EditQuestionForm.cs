@@ -48,7 +48,7 @@ namespace Millionaire
 
         public event EventHandler<EventArgs> Edit;
         public event EventHandler<EventArgs> Update_v;
-    
+
         public EditQuestionForm()
         {
             InitializeComponent();

@@ -504,7 +504,7 @@
             this.groupBox_hall.Controls.Add(this.label2);
             this.groupBox_hall.Controls.Add(this.label_A);
             this.groupBox_hall.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox_hall.Location = new System.Drawing.Point(386, 34);
+            this.groupBox_hall.Location = new System.Drawing.Point(386, 31);
             this.groupBox_hall.Name = "groupBox_hall";
             this.groupBox_hall.Size = new System.Drawing.Size(151, 138);
             this.groupBox_hall.TabIndex = 23;
